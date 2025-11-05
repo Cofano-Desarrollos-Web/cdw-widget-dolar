@@ -1,11 +1,10 @@
 <div id="dolar-widget" style="
   width:100%;
-  max-width:300px;
-  min-width: 280px;
+  max-width:290px;
   margin:0 auto;
   display:block;
   box-sizing:border-box;
-  font-family:'Roboto Variable', sans-serif;
+  font-family:'Roboto', sans-serif;
   border:1px solid #4CAF50;
   border-radius:8px;
   margin-top: 8px;
@@ -14,34 +13,31 @@
   text-align:center;
   box-shadow:0 2px 4px rgba(0,0,0,0.7);
 ">
-  <strong style="color:#4CAF50; font-size:1.2em; font-weight: 500;">Dólar Oficial 🇦🇷</strong><br>
-  <span id="compra" style="display:block; font-size:1.2em; font-weight: 500; margin-top:8px;">Compra: cargando...</span>
-  <span id="venta" style="display:block; font-size:1.2em; font-weight: 500;">Venta: cargando...</span>
+  <strong style="color:#4CAF50; font-size:1.4em; font-weight: 500;">Dólar Oficial 🇦🇷</strong><br>
+  <span id="compra" style="display:block; font-size:1.4em; margin-top:8px;">Compra: cargando...</span>
+  <span id="venta" style="display:block; font-size:1.4em; margin-top:7px;">Venta: cargando...</span>
 
   <hr style="margin:12px 0; border:none; border-top:1px solid #ddd;">
 
-  <strong style="color:#1976D2; font-size:1.2em; font-weight: 500;">Dólar Blue 🧾</strong><br>
-  <span id="blue-compra" style="display:block; font-size:1.2em; font-weight: 500; margin-top:8px;">Compra: cargando...</span>
-  <span id="blue-venta" style="display:block; font-size:1.2em; font-weight: 500;">Venta: cargando...</span>
+  <strong style="color:#1976D2; font-size:1.4em; font-weight: 500;">Dólar Blue 🧾</strong><br>
+  <span id="blue-compra" style="display:block; font-size:1.4em; margin-top:8px;">Compra: cargando...</span>
+  <span id="blue-venta" style="display:block; font-size:1.4em; margin-top:7px;">Venta: cargando...</span>
 
   <hr style="margin:12px 0; border:none; border-top:1px solid #ddd;">
-  
-  <small id="actualizado" style="color:gray; display:block; margin-top:12px; font-weight: 400; text-align:left;">Consultado: —</small>
+
+  <small id="actualizado" style="color:gray; font-size:12px; display:block; margin-top:12px; font-weight: 400; text-align:left;">Consultado: —</small>
   <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
-  <small style="font-size:11px; color:#999;">
+  <small style="font-size:12px; font-weight: 400; color:#999;">
     Fuente: <a href="https://dolarapi.com" target="_blank" style="color:#4CAF50;">DolarAPI.com</a>
   </small>
-  
-  <img src="/wp-content/uploads/cdw-assets/icono_pestana_CDW.jpg" alt="CDW" style="height:20px; opacity:0.8;">
-      
+  <a href="mailto:cofanodesarrollosweb@gmail.com" target="_blank"><img src="https://cofano-desarrollos-web.github.io/cdw-widget-dolar/icono_pestana_CDW.jpg
+" alt="Logo CDW" style="height:20px; opacity:0.8;"></a>
   </div>
   <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0px;">
-  <small style="font-size:11px; color:#999;">
+  <small style="font-size:12px; font-weight: 400; color:#999;">
     Fuente: <a href="https://bluelytics.com.ar/#!/" target="_blank" style="color:#4CAF50;">Bluelytics.com.ar</a>
   </small>
-  
   </div>
-  
 </div>
 
 <script>
@@ -64,19 +60,18 @@ function mostrarComparacion(id, tipo, actual, referencia) {
       color = "#F44336"; // rojo
     }
 
-    variacion = `<span style="color:${color}; font-size:0.7em; padding-left: 8px; font-weight:400;">${simbolo} ${porcentaje}%</span>`;
+    variacion = `<span style="color:${color}; font-size:0.75em; padding-left: 8px; font-weight:500;">${simbolo} ${porcentaje}%</span>`;
   }
 
   document.getElementById(id).innerHTML = `${tipo}: $${actual}${variacion}`;
 }
-
-
 
 function actualizarCotizacion() {
   fetch("/cotizacion.php")
     .then(res => res.json())
     .then(data => {
       fetch("/guardar-referencia.json?ts=" + new Date().getMinutes())
+
         .then(res => res.json())
         .then(ref => {
           data.forEach(item => {
