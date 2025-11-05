@@ -15,7 +15,7 @@ guardar-referencia.json → Archivo con la referencia guardada del día anterior
 ⚙️ Instalación en WordPress (manual)
 Subir archivos al servidor
 
-Colocar todos los archivos (cotizacion.php, guardar-referencia.php, guardar-referencia.json, Widget-Dolar.html, icono_pestana_CDW.jpg) en la raíz de WordPress (generalmente la carpeta public_html).
+Colocar todos los archivos (cotizacion.php, guardar-referencia.php) en la raíz de WordPress (generalmente la carpeta public_html).
 
 Esto simplifica las rutas y evita problemas de permisos.
 
@@ -27,9 +27,6 @@ Insertar un bloque HTML y pegar el contenido de Widget-Dolar.html.
 
 Verificar que las rutas al logo y a los scripts apunten a tu dominio, por ejemplo:
 
-html
-<img src="https://tusitio.com/icono_pestana_CDW.jpg">
-<script src="https://tusitio.com/cotizacion.php"></script>
 Configurar la referencia diaria
 
 guardar-referencia.php debe ejecutarse automáticamente a la medianoche (con un cron job o WP-Cron).
@@ -65,6 +62,6 @@ Control editorial: siempre podés revisar y editar la referencia diaria.
 
 Comparación clara: el usuario ve no solo el valor actual, sino también la variación respecto al día anterior.
 
-Instalación simple: basta con subir los archivos a la raíz de WordPress y pegar el widget en Elementor.
+Instalación simple: basta con subir los archivos a la raíz de WordPress y pegar el código de Widget-Dolar.html en un widget html de Wordpress.
 
 Fuentes confiables: APIs comunitarias estables y rápidas.
