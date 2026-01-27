@@ -25,7 +25,7 @@ Abrir Elementor (o el editor que uses).
 
 Insertar un bloque HTML y pegar el contenido de Widget-Dolar.html.
 
-Verificar que las rutas al logo y a los scripts apunten a tu dominio, por ejemplo:
+Verificar que las rutas a los scripts apunten a tu dominio.
 
 Configurar la referencia diaria
 
